@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Hanumant Shinde - Senior AI/ML Engineer portfolio">
+    <title>Hanumant Shinde | Senior AI/ML Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/styles.css">
+  </head>
+  <body>
+    <canvas id="signal-canvas" aria-hidden="true"></canvas>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Hanumant Shinde home">HS</a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero section-pad">
+        <div class="hero-copy">
+          <p class="eyebrow">Senior AI/ML Engineer · SLMs · MLOps · Security Platforms</p>
+          <h1>Hanumant Shinde</h1>
+          <p class="hero-title">Senior AI/ML Engineer</p>
+          <p class="hero-summary">
+            I build production AI systems where model quality, data pipelines, deployment reliability,
+            and business impact all have to hold together. Recently: a 97% accurate SLM for structured
+            bug triage, multi-domain training pipelines on Azure ML, and agentic AI for network policy automation.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="mailto:the.real.hshinde@gmail.com">Hire me</a>
+            <a class="button secondary" href="static/resume.html" target="_blank" rel="noreferrer">Resume</a>
+            <a class="button secondary" href="https://linkedin.com/in/meethshinde" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="button secondary" href="https://github.com/hanumant1255" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </div>
+        <aside class="hero-panel" aria-label="Professional snapshot">
+          <div>
+            <span>Current focus</span>
+            <strong>Small Language Models for Windows AI Platform</strong>
+          </div>
+          <div>
+            <span>Open to</span>
+            <strong>AI/ML engineering, staff backend, applied AI platform roles</strong>
+          </div>
+          <div>
+            <span>Location</span>
+            <strong>Pune, India · Open to relocation</strong>
+          </div>
+        </aside>
+      </section>
+
+      <section class="metrics" aria-label="Career impact metrics">
+        
+        <div class="metric">
+          <strong>97%</strong>
+          <span>SLM bug-triage accuracy</span>
+        </div>
+        
+        <div class="metric">
+          <strong>2B+</strong>
+          <span>daily security transactions</span>
+        </div>
+        
+        <div class="metric">
+          <strong>70%</strong>
+          <span>manual triage reduction</span>
+        </div>
+        
+      </section>
+
+      <section id="work" class="section section-pad">
+        <div class="section-heading">
+          <p class="eyebrow">Selected work</p>
+          <h2>AI systems with production pressure behind them</h2>
+        </div>
+        <div class="work-grid">
+          
+          <article class="work-card">
+            <h3>Binary SLM for Windows Bug Triage</h3>
+            <p>Fine-tuned Phi-3 Mini 3.8B with QLoRA and PEFT to classify structured bug reports as auto-close or investigation-needed, outperforming GPT-4o on the target workflow.</p>
+            <div class="impact">97% accuracy, 0.96 F1, 300+ engineer-hours saved monthly</div>
+            <small>Python, PyTorch, HuggingFace TRL, QLoRA, PEFT, Azure ML, ONNX</small>
+          </article>
+          
+          <article class="work-card">
+            <h3>Multi-Domain SLM Data Pipeline</h3>
+            <p>Architected a configurable dataset generator with LLM auto-labelling, human verification, heuristics, and incremental retraining support for security, performance, UI, and compliance models.</p>
+            <div class="impact">95% faster retraining cycles and reusable domain adaptation workflow</div>
+            <small>Azure ML, dataset versioning, model registry, managed endpoints, evaluation pipelines</small>
+          </article>
+          
+          <article class="work-card">
+            <h3>ZI-Agent for Network Policy Management</h3>
+            <p>Led a multi-stage agentic AI system using LLM reasoning, GraphRAG, and MCP to automate network policy configuration for enterprise security teams.</p>
+            <div class="impact">60% less manual configuration time for 1,000+ network engineers</div>
+            <small>Python, Java, GraphRAG, MCP, Kafka, Redis, Spring Boot, AWS</small>
+          </article>
+          
+        </div>
+      </section>
+
+      <section class="patent-band section-pad">
+        <div>
+          <p class="eyebrow">Innovation</p>
+          <h2>Co-inventor of US20250227110A1</h2>
+          <p>
+            Dynamic risk-score enforcement system for zero-trust cloud security, applied to real-time
+            threat detection and anomaly identification in production environments.
+          </p>
+        </div>
+        <a class="button secondary light" href="https://patents.google.com/patent/US20250227110A1" target="_blank" rel="noreferrer">View patent</a>
+      </section>
+
+      <section id="experience" class="section section-pad">
+        <div class="section-heading">
+          <p class="eyebrow">Experience</p>
+          <h2>From high-scale backend systems to specialized language models</h2>
+        </div>
+        <div class="timeline">
+          
+          <article class="timeline-item">
+            <div class="timeline-meta">
+              <strong>Microsoft</strong>
+              <span>Oct 2025 - Present</span>
+            </div>
+            <div class="timeline-body">
+              <h3>Senior AI Engineer, Small Language Models, Windows AI Platform</h3>
+              <ul>
+                
+                <li>Built and deployed a 97% accurate binary SLM for structured bug triage.</li>
+                
+                <li>Own Azure ML training jobs, model registry, managed endpoints, monitoring, and retraining loops.</li>
+                
+                <li>Optimized models to INT4 with ONNX for low-latency on-device inference.</li>
+                
+                <li>Built RAG and GraphRAG systems over Windows telemetry and bug corpora.</li>
+                
+              </ul>
+            </div>
+          </article>
+          
+          <article class="timeline-item">
+            <div class="timeline-meta">
+              <strong>Zscaler</strong>
+              <span>Feb 2022 - Sep 2025</span>
+            </div>
+            <div class="timeline-body">
+              <h3>Staff Backend Engineer, Security Platform</h3>
+              <ul>
+                
+                <li>Led ZI-Agent, a standalone agentic AI service for automated network policy management.</li>
+                
+                <li>Architected risk aggregation pipelines processing 2B+ security transactions per day under 100ms latency.</li>
+                
+                <li>Designed high-throughput Kafka and Avro message exchange with 99.99% fault tolerance.</li>
+                
+                <li>Mentored four engineers, all promoted to senior.</li>
+                
+              </ul>
+            </div>
+          </article>
+          
+          <article class="timeline-item">
+            <div class="timeline-meta">
+              <strong>Xactly Corporation</strong>
+              <span>Sep 2021 - Feb 2022</span>
+            </div>
+            <div class="timeline-body">
+              <h3>Senior Software Engineer</h3>
+              <ul>
+                
+                <li>Enhanced ORM framework used by 20+ teams and improved query performance by 35%.</li>
+                
+                <li>Delivered high-performance REST APIs with 95%+ test coverage.</li>
+                
+              </ul>
+            </div>
+          </article>
+          
+          <article class="timeline-item">
+            <div class="timeline-meta">
+              <strong>Randstad RiseSmart</strong>
+              <span>Jul 2020 - Aug 2021</span>
+            </div>
+            <div class="timeline-body">
+              <h3>Senior Development Engineer</h3>
+              <ul>
+                
+                <li>Re-architected a 500K+ user job portal from monolith to AWS ECS microservices.</li>
+                
+                <li>Cut infrastructure cost by 40% and improved response consistency by 60%.</li>
+                
+              </ul>
+            </div>
+          </article>
+          
+          <article class="timeline-item">
+            <div class="timeline-meta">
+              <strong>TIAA and GS Lab</strong>
+              <span>Jul 2016 - Jul 2020</span>
+            </div>
+            <div class="timeline-body">
+              <h3>Software Engineer</h3>
+              <ul>
+                
+                <li>Reduced API latency from 800ms to 300ms for a retirement platform serving 5M+ users.</li>
+                
+                <li>Contributed to an open-source networking library adopted by Intel&#39;s 5G division.</li>
+                
+              </ul>
+            </div>
+          </article>
+          
+        </div>
+      </section>
+
+      <section id="skills" class="section section-pad skills-section">
+        <div class="section-heading">
+          <p class="eyebrow">Skills</p>
+          <h2>Tools I use to ship reliable AI products</h2>
+        </div>
+        <div class="skills-grid">
+          
+          <article class="skill-group">
+            <h3>AI / ML</h3>
+            <div class="chips">
+              
+              <span>SLM/LLM fine-tuning</span>
+              
+              <span>QLoRA</span>
+              
+              <span>LoRA</span>
+              
+              <span>PEFT</span>
+              
+              <span>SFTTrainer</span>
+              
+              <span>Transformers</span>
+              
+              <span>PyTorch</span>
+              
+              <span>RAG</span>
+              
+              <span>GraphRAG</span>
+              
+              <span>AI agents</span>
+              
+              <span>MCP</span>
+              
+              <span>ONNX</span>
+              
+              <span>INT4/INT8 quantization</span>
+              
+            </div>
+          </article>
+          
+          <article class="skill-group">
+            <h3>MLOps</h3>
+            <div class="chips">
+              
+              <span>Azure ML</span>
+              
+              <span>training jobs</span>
+              
+              <span>model registry</span>
+              
+              <span>managed endpoints</span>
+              
+              <span>monitoring</span>
+              
+              <span>dataset versioning</span>
+              
+              <span>experiment tracking</span>
+              
+            </div>
+          </article>
+          
+          <article class="skill-group">
+            <h3>Backend</h3>
+            <div class="chips">
+              
+              <span>Python</span>
+              
+              <span>Java 8-21</span>
+              
+              <span>Spring Boot</span>
+              
+              <span>REST APIs</span>
+              
+              <span>distributed systems</span>
+              
+              <span>microservices</span>
+              
+              <span>low-latency systems</span>
+              
+            </div>
+          </article>
+          
+          <article class="skill-group">
+            <h3>Cloud and Data</h3>
+            <div class="chips">
+              
+              <span>Azure</span>
+              
+              <span>AWS</span>
+              
+              <span>Docker</span>
+              
+              <span>Kubernetes</span>
+              
+              <span>OpenShift</span>
+              
+              <span>Kafka</span>
+              
+              <span>Redis</span>
+              
+              <span>PostgreSQL</span>
+              
+              <span>MongoDB</span>
+              
+              <span>Elasticsearch</span>
+              
+            </div>
+          </article>
+          
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section section-pad">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Let us talk about AI systems that need to work in the real world.</h2>
+          <p>Pune, India · +91-9763015647</p>
+        </div>
+        <div class="contact-actions">
+          <a class="button primary" href="mailto:the.real.hshinde@gmail.com">the.real.hshinde@gmail.com</a>
+          <a class="button secondary" href="static/resume.html" target="_blank" rel="noreferrer">Resume</a>
+          <a class="button secondary" href="https://linkedin.com/in/meethshinde" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="button secondary" href="https://github.com/hanumant1255" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>Hanumant Shinde</span>
+      <span>Senior AI/ML Engineer</span>
+    </footer>
+
+    <script src="static/script.js"></script>
+  </body>
+</html>
