@@ -20,7 +20,8 @@ def build() -> None:
             raise RuntimeError(f"Static build failed with status {response.status_code}")
         html = response.get_data(as_text=True)
 
-    html = html.replace('/static/', 'static/')
+    html = html.replace('href="/static/', 'href="static/')
+    html = html.replace('src="/static/', 'src="static/')
     (DIST / "index.html").write_text(html, encoding="utf-8")
     copytree(ROOT / "static", DIST / "static", dirs_exist_ok=True)
 

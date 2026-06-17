@@ -20,6 +20,8 @@ PROFILE = {
     "resume_file": "Hanumant_Shinde_Resume_2026.html",
     "availability": "Open to AI/ML engineering, applied AI platform, and staff backend roles.",
     "quote": "Curiosity finds the edge case. Ownership gets it into production.",
+    "site_url": "https://hanumant1255.github.io/hanumant-portfolio/",
+    "thumbnail_url": "https://hanumant1255.github.io/hanumant-portfolio/static/portfolio-thumbnail.png",
 }
 
 
