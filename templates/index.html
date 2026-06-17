@@ -7,77 +7,127 @@
     <title>{{ profile.name }} | {{ profile.title }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
   </head>
   <body>
     <canvas id="signal-canvas" aria-hidden="true"></canvas>
 
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="{{ profile.name }} home">HS</a>
+      <a class="brand-lockup" href="#top" aria-label="{{ profile.name }} home">
+        <span class="brand">HS</span>
+        <span>
+          <strong>{{ profile.name }}</strong>
+          <small>{{ profile.title }}</small>
+        </span>
+      </a>
       <nav class="nav" aria-label="Primary navigation">
         <a href="#work">Work</a>
+        <a href="#principles">Principles</a>
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="mailto:{{ profile.email }}">Contact</a>
       </nav>
     </header>
 
     <main id="top">
       <section class="hero section-pad">
         <div class="hero-copy">
-          <p class="eyebrow">Senior AI/ML Engineer · SLMs · MLOps · Security Platforms</p>
+          <p class="eyebrow">Senior AI/ML Engineer · SLMs · Agentic AI · Security Platforms</p>
           <h1>{{ profile.name }}</h1>
-          <p class="hero-title">{{ profile.title }}</p>
-          <p class="hero-summary">
-            I build production AI systems where model quality, data pipelines, deployment reliability,
-            and business impact all have to hold together. Recently: a 97% accurate SLM for structured
-            bug triage, multi-domain training pipelines on Azure ML, and agentic AI for network policy automation.
-          </p>
+          <p class="hero-title">{{ profile.headline }}</p>
+          <p class="hero-summary">{{ profile.summary }}</p>
           <div class="hero-actions">
             <a class="button primary" href="mailto:{{ profile.email }}">Hire me</a>
             <a class="button secondary" href="{{ url_for('static', filename='resume.html') }}" target="_blank" rel="noreferrer">Resume</a>
             <a class="button secondary" href="{{ profile.linkedin }}" target="_blank" rel="noreferrer">LinkedIn</a>
             <a class="button secondary" href="{{ profile.github }}" target="_blank" rel="noreferrer">GitHub</a>
           </div>
+          <blockquote class="hero-quote">{{ profile.quote }}</blockquote>
         </div>
-        <aside class="hero-panel" aria-label="Professional snapshot">
-          <div>
-            <span>Current focus</span>
-            <strong>Small Language Models for Windows AI Platform</strong>
+
+        <aside class="hero-visual" aria-label="AI production system graphic">
+          <div class="visual-header">
+            <span>Production AI loop</span>
+            <strong>SLM to endpoint</strong>
           </div>
-          <div>
-            <span>Open to</span>
-            <strong>AI/ML engineering, staff backend, applied AI platform roles</strong>
+          <div class="system-map">
+            <div class="map-node n1">Data</div>
+            <div class="map-node n2">Labels</div>
+            <div class="map-node n3">Fine-tune</div>
+            <div class="map-node n4">Evaluate</div>
+            <div class="map-node n5">Deploy</div>
+            <div class="map-node n6">Observe</div>
+            <div class="map-line l1"></div>
+            <div class="map-line l2"></div>
+            <div class="map-line l3"></div>
+            <div class="map-line l4"></div>
+            <div class="map-line l5"></div>
           </div>
-          <div>
-            <span>Location</span>
-            <strong>{{ profile.location }} · Open to relocation</strong>
+          <div class="terminal-card">
+            <span>latest signal</span>
+            <code>accuracy=97% · f1=0.96 · latency target met</code>
+          </div>
+          <div class="hero-note">
+            <span>Available for</span>
+            <strong>{{ profile.availability }}</strong>
           </div>
         </aside>
       </section>
 
-      <section class="metrics" aria-label="Career impact metrics">
+      <section class="metrics section-pad" aria-label="Career impact metrics">
         {% for metric in metrics %}
         <div class="metric">
           <strong>{{ metric.value }}</strong>
           <span>{{ metric.label }}</span>
+          <small>{{ metric.detail }}</small>
         </div>
         {% endfor %}
       </section>
 
       <section id="work" class="section section-pad">
-        <div class="section-heading">
-          <p class="eyebrow">Selected work</p>
-          <h2>AI systems with production pressure behind them</h2>
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">Selected work</p>
+            <h2>Proof that the system shipped.</h2>
+          </div>
+          <p>
+            The strongest work leaves a trail: the problem that mattered,
+            the system that was built, and the measurable change after release.
+          </p>
         </div>
         <div class="work-grid">
           {% for item in featured_work %}
           <article class="work-card">
+            <span class="card-tag">{{ item.tag }}</span>
             <h3>{{ item.title }}</h3>
-            <p>{{ item.summary }}</p>
+            <dl>
+              <div>
+                <dt>Problem</dt>
+                <dd>{{ item.problem }}</dd>
+              </div>
+              <div>
+                <dt>Built</dt>
+                <dd>{{ item.built }}</dd>
+              </div>
+            </dl>
             <div class="impact">{{ item.impact }}</div>
             <small>{{ item.stack }}</small>
+          </article>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section id="principles" class="principles section-pad">
+        <div class="section-heading">
+          <p class="eyebrow">How I work</p>
+          <h2>Curious enough to dig. Practical enough to ship.</h2>
+        </div>
+        <div class="principle-grid">
+          {% for item in operating_principles %}
+          <article class="principle-card">
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.text }}</p>
           </article>
           {% endfor %}
         </div>
@@ -96,9 +146,15 @@
       </section>
 
       <section id="experience" class="section section-pad">
-        <div class="section-heading">
-          <p class="eyebrow">Experience</p>
-          <h2>From high-scale backend systems to specialized language models</h2>
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">Experience</p>
+            <h2>From high-scale backend systems to specialized language models.</h2>
+          </div>
+          <p>
+            The through-line is ownership: platform reliability, data quality, model behavior,
+            deployment, and the people who have to use the system.
+          </p>
         </div>
         <div class="timeline">
           {% for job in experience %}
@@ -121,9 +177,15 @@
       </section>
 
       <section id="skills" class="section section-pad skills-section">
-        <div class="section-heading">
-          <p class="eyebrow">Skills</p>
-          <h2>Tools I use to ship reliable AI products</h2>
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">Skills</p>
+            <h2>Tools for the full AI product lifecycle.</h2>
+          </div>
+          <p>
+            Model training is only one layer. Useful AI also needs data quality,
+            cloud deployment, observability, and backend systems that teams can trust.
+          </p>
         </div>
         <div class="skills-grid">
           {% for group, items in skills.items() %}
@@ -142,7 +204,7 @@
       <section id="contact" class="contact-section section-pad">
         <div>
           <p class="eyebrow">Contact</p>
-          <h2>Let us talk about AI systems that need to work in the real world.</h2>
+          <h2>Let us build AI systems that survive contact with production.</h2>
           <p>{{ profile.location }} · {{ profile.phone }}</p>
         </div>
         <div class="contact-actions">

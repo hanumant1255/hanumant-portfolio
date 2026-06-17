@@ -7,49 +7,73 @@ app = Flask(__name__)
 PROFILE = {
     "name": "Hanumant Shinde",
     "title": "Senior AI/ML Engineer",
+    "headline": "I turn ambiguous AI ideas into reliable systems that ship.",
+    "summary": (
+        "Senior AI/ML engineer building small language models, agentic workflows, "
+        "MLOps pipelines, and high-scale backend systems for security and platform teams."
+    ),
     "location": "Pune, India",
     "phone": "+91-9763015647",
     "email": "the.real.hshinde@gmail.com",
     "linkedin": "https://linkedin.com/in/meethshinde",
     "github": "https://github.com/hanumant1255",
     "resume_file": "Hanumant_Shinde_Resume_2026.html",
+    "availability": "Open to AI/ML engineering, applied AI platform, and staff backend roles.",
+    "quote": "Curiosity finds the edge case. Ownership gets it into production.",
 }
 
 
 METRICS = [
-    {"value": "97%", "label": "SLM bug-triage accuracy"},
-    {"value": "2B+", "label": "daily security transactions"},
-    {"value": "70%", "label": "manual triage reduction"},
+    {"value": "97%", "label": "SLM bug-triage accuracy", "detail": "Phi-3 Mini fine-tuned for structured bug fields"},
+    {"value": "2B+", "label": "daily security transactions", "detail": "Risk pipelines designed for sub-100ms latency"},
+    {"value": "70%", "label": "manual triage reduction", "detail": "300+ engineer-hours saved per month"},
 ]
 
 
 FEATURED_WORK = [
     {
         "title": "Binary SLM for Windows Bug Triage",
-        "summary": (
-            "Fine-tuned Phi-3 Mini 3.8B with QLoRA and PEFT to classify structured bug reports "
-            "as auto-close or investigation-needed, outperforming GPT-4o on the target workflow."
-        ),
+        "tag": "SLM lifecycle",
+        "problem": "Manual bug triage was slow, repetitive, and expensive at Windows platform scale.",
+        "built": "Fine-tuned Phi-3 Mini 3.8B with QLoRA and PEFT, then deployed the model through Azure ML and ONNX optimization.",
         "impact": "97% accuracy, 0.96 F1, 300+ engineer-hours saved monthly",
         "stack": "Python, PyTorch, HuggingFace TRL, QLoRA, PEFT, Azure ML, ONNX",
     },
     {
         "title": "Multi-Domain SLM Data Pipeline",
-        "summary": (
-            "Architected a configurable dataset generator with LLM auto-labelling, human verification, "
-            "heuristics, and incremental retraining support for security, performance, UI, and compliance models."
-        ),
+        "tag": "Data and MLOps",
+        "problem": "Every new model domain needed trustworthy labels without rebuilding the training workflow.",
+        "built": "Created a configurable generator with LLM auto-labelling, human verification, heuristics, and incremental retraining.",
         "impact": "95% faster retraining cycles and reusable domain adaptation workflow",
         "stack": "Azure ML, dataset versioning, model registry, managed endpoints, evaluation pipelines",
     },
     {
         "title": "ZI-Agent for Network Policy Management",
-        "summary": (
-            "Led a multi-stage agentic AI system using LLM reasoning, GraphRAG, and MCP to automate "
-            "network policy configuration for enterprise security teams."
-        ),
+        "tag": "Agentic AI",
+        "problem": "Network engineers needed faster, safer ways to configure complex enterprise policy rules.",
+        "built": "Led a multi-stage AI agent using LLM reasoning, GraphRAG, and MCP as a standalone service.",
         "impact": "60% less manual configuration time for 1,000+ network engineers",
         "stack": "Python, Java, GraphRAG, MCP, Kafka, Redis, Spring Boot, AWS",
+    },
+]
+
+
+OPERATING_PRINCIPLES = [
+    {
+        "title": "Get the job done, then harden it",
+        "text": "Start with the job to be done, scope the smallest reliable system, then measure whether it helped.",
+    },
+    {
+        "title": "Stay curious near the data",
+        "text": "The interesting bugs usually live between labels, telemetry, user behavior, and production constraints.",
+    },
+    {
+        "title": "Make AI boring in production",
+        "text": "Good models are only valuable when evaluation, monitoring, rollback, and ownership are just as solid.",
+    },
+    {
+        "title": "Explain the tradeoff",
+        "text": "I like decisions that a teammate can understand six months later: why this model, why this data, why now.",
     },
 ]
 
@@ -163,6 +187,7 @@ def home():
         profile=PROFILE,
         metrics=METRICS,
         featured_work=FEATURED_WORK,
+        operating_principles=OPERATING_PRINCIPLES,
         experience=EXPERIENCE,
         skills=SKILLS,
     )
