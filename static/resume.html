@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hanumant Shinde — Senior AI/ML Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --ink:     #1a1a24;
+    --mid:     #4a4a5a;
+    --muted:   #6e6e7e;
+    --accent:  #1a3a6b;
+    --accent-light: #2a5a9b;
+    --accent2: #b8860b;
+    --rule:    #d4d4d8;
+    --bg:      #ffffff;
+    --sans:    'Inter', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+    --soft-bg: #f8f9fc;
+    --highlight-bg: #eef3f9;
+  }
+
+  body {
+    font-family: var(--sans);
+    background: #edeeef;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 32px;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    background: var(--bg);
+    box-shadow: 0 8px 48px rgba(0,0,0,0.10);
+    padding: 12mm 15mm 12mm 15mm;
+    margin: 0 auto;
+    border-radius: 4px;
+    position: relative;
+  }
+
+  /* Top accent bar */
+  .page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    border-radius: 4px 4px 0 0;
+  }
+
+  /* Typography */
+  h1 {
+    font-size: 32pt;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    color: var(--ink);
+    line-height: 1.1;
+    margin-bottom: 2px;
+  }
+
+  .tagline {
+    font-size: 9.5pt;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+
+  .contact {
+    font-size: 8.5pt;
+    color: var(--muted);
+    line-height: 1.6;
+    text-align: right;
+  }
+
+  .contact a {
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 0.5px dotted var(--muted);
+    transition: color 0.2s;
+  }
+
+  .contact a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  /* Section headings */
+  .sec-head {
+    font-size: 8.5pt;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-bottom: 2px solid var(--rule);
+    padding-bottom: 4px;
+    margin-bottom: 10px;
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .sec-head::before {
+    content: '◆';
+    font-size: 7pt;
+    color: var(--accent2);
+  }
+
+  /* Summary – refined with subtle background */
+  .summary {
+    font-size: 9pt;
+    color: var(--mid);
+    line-height: 1.6;
+    text-align: left;
+    margin-bottom: 8px;
+    background: var(--soft-bg);
+    padding: 10px 14px;
+    border-radius: 6px;
+    border-left: 3px solid var(--accent);
+  }
+
+  .summary strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* Skills grid – cleaner */
+  .skills-wrap {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 6px 12px;
+    margin-bottom: 6px;
+    background: var(--soft-bg);
+    padding: 8px 12px;
+    border-radius: 6px;
+  }
+  .sk {
+    font-size: 8.2pt;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: 0.3px;
+  }
+  .sv {
+    font-size: 8pt;
+    color: var(--mid);
+    line-height: 1.5;
+  }
+
+  /* Award card – more refined */
+  .award-card {
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--accent2);
+    background: #fffbf5;
+    padding: 8px 14px;
+    border-radius: 6px;
+    max-width: 100%;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+    transition: box-shadow 0.2s;
+  }
+  .award-title {
+    font-size: 8.5pt;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .award-sub {
+    font-size: 7.8pt;
+    color: var(--muted);
+    margin-top: 2px;
+    line-height: 1.5;
+  }
+
+  /* Job entries – card style */
+  .job {
+    margin-bottom: 12px;
+    background: var(--soft-bg);
+    padding: 10px 14px 10px 14px;
+    border-radius: 6px;
+    border: 1px solid #eaeaef;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .job:hover {
+    border-color: var(--accent-light);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  .job-hd {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2px;
+    flex-wrap: wrap;
+  }
+  .co {
+    font-size: 10.5pt;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .dates {
+    font-size: 7.8pt;
+    color: var(--muted);
+    font-weight: 400;
+    white-space: nowrap;
+  }
+  .role {
+    font-size: 8.5pt;
+    font-weight: 500;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+
+  .tech-stack {
+    font-size: 7.6pt;
+    color: var(--muted);
+    margin-top: 6px;
+    padding-top: 5px;
+    border-top: 1px dashed var(--rule);
+  }
+  .tech-stack strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  ul.bl {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  ul.bl li {
+    position: relative;
+    padding-left: 16px;
+    font-size: 8.2pt;
+    color: var(--mid);
+    line-height: 1.5;
+    margin-bottom: 3px;
+  }
+  ul.bl li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--accent2);
+    font-size: 8pt;
+    top: 0px;
+  }
+  ul.bl li strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* Inline metric highlights */
+  .metric-highlight {
+    background: var(--highlight-bg);
+    color: var(--accent);
+    font-weight: 700;
+    padding: 0 4px;
+    border-radius: 2px;
+  }
+
+  /* Education */
+  .edu-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 2px;
+    background: var(--soft-bg);
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: 1px solid #eaeaef;
+  }
+  .edu-deg {
+    font-size: 8.8pt;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .edu-meta {
+    font-size: 8pt;
+    color: var(--muted);
+  }
+
+  /* Rules – replaced with subtle spacing */
+  .rule {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--rule), transparent);
+    margin: 4px 0 8px 0;
+  }
+
+  /* Header layout */
+  .header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* Print styles */
+  @media print {
+    body {
+      background: white;
+      padding: 0;
+    }
+    .page {
+      box-shadow: none;
+      width: 100%;
+      padding: 10mm 12mm;
+      border-radius: 0;
+    }
+    .page::before {
+      border-radius: 0;
+    }
+    .job, .summary, .skills-wrap, .edu-row {
+      background: white !important;
+      border-color: #ddd !important;
+      box-shadow: none !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .job:hover {
+      border-color: #eaeaef !important;
+      box-shadow: none !important;
+    }
+    a {
+      color: inherit !important;
+      text-decoration: none !important;
+    }
+    * {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER – tagline updated -->
+  <div class="header-row">
+    <div>
+      <h1>Hanumant Shinde</h1>
+      <div class="tagline">Senior AI/ML Engineer</div>
+    </div>
+    <div class="contact">
+      Pune, India • +91-9763015647<br>
+      <a href="mailto:the.real.hshinde@gmail.com">the.real.hshinde@gmail.com</a><br>
+      <a href="https://linkedin.com/in/meethshinde" target="_blank">linkedin.com/in/meethshinde</a> • <a href="https://github.com/hanumant1255" target="_blank">github.com/hanumant1255</a><br>
+      Open to relocation
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="summary">
+    <strong>Senior AI/ML Engineer</strong> who built a <strong class="metric-highlight">97%‑accurate</strong> binary SLM at Microsoft that outperformed GPT‑4o on structured bug triage — now driving the <strong>full SLM lifecycle</strong> from domain‑agnostic dataset generation (auto‑labelling + human‑in‑the‑loop) through QLoRA fine‑tuning on Azure ML to production deployment. Architected a configurable pipeline that can spawn <strong>multiple domain‑specific SLMs</strong> (security, performance, UI) by swapping labelling rules, reducing manual triage effort by ~70% (300+ engineer‑hours/month). Co‑inventor of <strong>US20250227110A1</strong> (risk enforcement). Previously engineered backend systems handling <strong class="metric-highlight">2B+ daily transactions</strong> at &lt;100ms latency, and built an <strong>AI Agent</strong> that cut policy configuration time by 60%.
+  </div>
+
+  <!-- SKILLS -->
+  <div class="sec-head">Technical Skills</div>
+  <div class="skills-wrap">
+    <div class="sk">AI / ML</div>
+    <div class="sv">SLM/LLM Fine‑Tuning (QLoRA, LoRA, PEFT, SFTTrainer, HuggingFace TRL, Transformers, PyTorch), ONNX, INT4/INT8 Quantization, RAG, GraphRAG, Azure AI Search, Vector Embeddings, AI Agents, MCP, Binary Classification, Domain Adaptation, Multi‑Task SLM</div>
+    <div class="sk">MLOps</div>
+    <div class="sv">Azure ML (Training Jobs, Model Registry, Managed Endpoints, Monitoring), Dataset Versioning, Experiment Tracking, A100 GPU Training, Model Evaluation Pipelines</div>
+    <div class="sk">Data & Labelling</div>
+    <div class="sv">Synthetic Data Generation, LLM‑based Auto‑labelling, Human‑in‑the‑Loop Annotation, Rule‑based Heuristics, Incremental Data Pipelines, Dataset Quality Validation</div>
+    <div class="sk">Languages</div>
+    <div class="sv">Python (Advanced), Java 8–21 (Expert), SQL</div>
+    <div class="sk">Cloud & Infra</div>
+    <div class="sv">Azure, AWS (EC2, S3, Lambda), Docker, Kubernetes, OpenShift, Prometheus, Grafana</div>
+    <div class="sk">Data & Messaging</div>
+    <div class="sv">Apache Kafka, RabbitMQ, PostgreSQL, MongoDB, Redis, Elasticsearch, Cassandra, DynamoDB</div>
+  </div>
+
+  <!-- INNOVATION & PATENTS -->
+  <div class="sec-head">Innovation & Patents</div>
+  <div class="award-card">
+    <div class="award-title"><a href="https://patents.google.com/patent/US20250227110A1" target="_blank" style="color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--accent2);">⚖ US Patent — US20250227110A1</a></div>
+    <div class="award-sub">Co‑inventor: dynamic risk‑score enforcement system for zero‑trust cloud security. Applied to real‑time threat detection, improving anomaly identification by 40% in production deployments.</div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="sec-head">Professional Experience</div>
+
+  <!-- MICROSOFT -->
+  <div class="job">
+    <div class="job-hd">
+      <span class="co">Microsoft</span>
+      <span class="dates">Oct 2025 – Present</span>
+    </div>
+    <div class="role">Senior AI Engineer — Small Language Models, Windows AI Platform</div>
+    <ul class="bl">
+      <li><strong>Binary SLM for Bug Triage:</strong> Fine‑tuned Phi‑3 Mini 3.8B (QLoRA + PEFT) to classify bug reports as <strong>"auto‑close" vs. "needs investigation"</strong> — achieving <strong class="metric-highlight">97% accuracy</strong> (F1: 0.96, Precision: 0.95, Recall: 0.97), outperforming GPT‑4o by 8% on structured bug fields. Reduced manual triage effort by <strong>~70% (300+ engineer‑hours/month)</strong> and deployed to Windows AI platform serving 100M+ users.</li>
+      <li><strong>Multi‑Domain SLM Pipeline:</strong> Architected a configurable dataset generator (LLM auto‑label + human verification + heuristics) that can produce training data for <strong>any domain</strong> – security, performance, UI, compliance – enabling rapid creation of specialized SLMs without re‑engineering.</li>
+      <li><strong>End‑to‑End MLOps on Azure ML:</strong> Own model registry, A100 training jobs, managed endpoints, and production monitoring. Incremental data pipelines cut retraining cycles by <strong class="metric-highlight">95%</strong>.</li>
+      <li><strong>On‑Device Optimization:</strong> Quantized models to <strong>INT4 via ONNX</strong> for low‑latency inference inside Windows AI platform memory constraints.</li>
+      <li><strong>RAG + GraphRAG:</strong> Built vector‑based and GraphRAG pipelines on Azure AI Search over Windows telemetry and bug corpora – used to augment LLM context for investigation suggestions.</li>
+    </ul>
+    <div class="tech-stack"><strong>Tech Stack:</strong> Python, PyTorch, QLoRA, PEFT, HuggingFace TRL, Azure ML, ONNX, Azure AI Search, Phi‑3</div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ZSCALER – updated role title & removed ML integration line -->
+  <div class="job">
+    <div class="job-hd">
+      <span class="co">Zscaler</span>
+      <span class="dates">Feb 2022 – Sep 2025 • 3.5 yrs</span>
+    </div>
+    <div class="role">Staff Backend Engineer — Security Platform</div>
+    <ul class="bl">
+      <li><strong>AI Agent — ZI‑Agent:</strong> Led development of a multi‑stage agentic AI system (LLM + GraphRAG + MCP) for automated network policy management. Delivered as a standalone service, reducing manual policy configuration time by <strong>60%</strong> for 1,000+ network engineers and generating <strong class="metric-highlight">$2M+ ARR</strong>.</li>
+      <li><strong>Risk Aggregation Engine:</strong> Architected core backend pipeline processing <strong class="metric-highlight">2B+ security transactions/day</strong> at &lt;100ms latency across 4,000+ enterprise customers.</li>
+      <li><strong>Distributed Data Architecture:</strong> Designed high‑throughput Kafka/Avro message exchange with <strong>99.99% fault tolerance</strong> across 3 engineering teams; cut MTTR by <strong>50%</strong> via Prometheus/Grafana observability.</li>
+      <li><strong>Impact:</strong> Mentored 4 engineers (100% promoted to senior); delivered 4 microservices that collectively contributed to the platform's revenue growth.</li>
+    </ul>
+    <div class="tech-stack"><strong>Tech Stack:</strong> Java 11/17, Python, Apache Kafka, Redis, RabbitMQ, Spring Boot, AWS, Prometheus, Grafana</div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- XACTLY -->
+  <div class="job">
+    <div class="job-hd">
+      <span class="co">Xactly Corporation</span>
+      <span class="dates">Sep 2021 – Feb 2022</span>
+    </div>
+    <div class="role">Senior Software Engineer</div>
+    <ul class="bl">
+      <li>Enhanced ORM framework used by 20+ teams, improving query performance by <strong>35%</strong>; delivered high‑performance REST APIs with 95%+ test coverage.</li>
+    </ul>
+    <div class="tech-stack"><strong>Tech Stack:</strong> Java, Spring, Hibernate, PostgreSQL</div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- RANDSTAD -->
+  <div class="job">
+    <div class="job-hd">
+      <span class="co">Randstad RiseSmart</span>
+      <span class="dates">Jul 2020 – Aug 2021</span>
+    </div>
+    <div class="role">Senior Development Engineer</div>
+    <ul class="bl">
+      <li>Re‑architected monolithic job portal (500K+ users) to microservices on AWS ECS, cutting infra costs by <strong>40%</strong>; built API Gateway improving response consistency by <strong>60%</strong>.</li>
+    </ul>
+    <div class="tech-stack"><strong>Tech Stack:</strong> Java, Spring Boot, AWS (ECS, S3, Lambda), Docker, PostgreSQL</div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- EARLY CAREER -->
+  <div class="job">
+    <div class="job-hd">
+      <span class="co">TIAA</span>
+      <span class="dates">Dec 2018 – Jul 2020</span>
+    </div>
+    <div class="co" style="font-weight:400;font-size:9pt;margin-top:2px;">GS Lab &nbsp;·&nbsp; Jul 2016 – Nov 2018</div>
+    <ul class="bl" style="margin-top:4px;">
+      <li><strong>TIAA:</strong> Reduced API latency 62% (800ms→300ms) via Redis caching; served 5M+ users on retirement platform.</li>
+      <li><strong>GS Lab:</strong> Contributed to open‑source networking lib adopted by Intel's 5G division; monitoring dashboard cut incident response by 50%.</li>
+    </ul>
+    <div class="tech-stack"><strong>Tech Stack:</strong> Java, Redis, Spring, JavaScript (GS Lab), Linux</div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="sec-head">Education</div>
+  <div class="edu-row">
+    <div class="edu-deg">B.Tech — Computer Science Engineering</div>
+    <div class="edu-meta">Dr. Babasaheb Ambedkar Technological University, Maharashtra • 2012–2016</div>
+  </div>
+
+</div>
+</body>
+</html>

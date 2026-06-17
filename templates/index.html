@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ profile.name }} - {{ profile.title }} portfolio">
+    <title>{{ profile.name }} | {{ profile.title }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    <canvas id="signal-canvas" aria-hidden="true"></canvas>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="{{ profile.name }} home">HS</a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero section-pad">
+        <div class="hero-copy">
+          <p class="eyebrow">Senior AI/ML Engineer · SLMs · MLOps · Security Platforms</p>
+          <h1>{{ profile.name }}</h1>
+          <p class="hero-title">{{ profile.title }}</p>
+          <p class="hero-summary">
+            I build production AI systems where model quality, data pipelines, deployment reliability,
+            and business impact all have to hold together. Recently: a 97% accurate SLM for structured
+            bug triage, multi-domain training pipelines on Azure ML, and agentic AI for network policy automation.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="mailto:{{ profile.email }}">Hire me</a>
+            <a class="button secondary" href="{{ url_for('static', filename='resume.html') }}" target="_blank" rel="noreferrer">Resume</a>
+            <a class="button secondary" href="{{ profile.linkedin }}" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="button secondary" href="{{ profile.github }}" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </div>
+        <aside class="hero-panel" aria-label="Professional snapshot">
+          <div>
+            <span>Current focus</span>
+            <strong>Small Language Models for Windows AI Platform</strong>
+          </div>
+          <div>
+            <span>Open to</span>
+            <strong>AI/ML engineering, staff backend, applied AI platform roles</strong>
+          </div>
+          <div>
+            <span>Location</span>
+            <strong>{{ profile.location }} · Open to relocation</strong>
+          </div>
+        </aside>
+      </section>
+
+      <section class="metrics" aria-label="Career impact metrics">
+        {% for metric in metrics %}
+        <div class="metric">
+          <strong>{{ metric.value }}</strong>
+          <span>{{ metric.label }}</span>
+        </div>
+        {% endfor %}
+      </section>
+
+      <section id="work" class="section section-pad">
+        <div class="section-heading">
+          <p class="eyebrow">Selected work</p>
+          <h2>AI systems with production pressure behind them</h2>
+        </div>
+        <div class="work-grid">
+          {% for item in featured_work %}
+          <article class="work-card">
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.summary }}</p>
+            <div class="impact">{{ item.impact }}</div>
+            <small>{{ item.stack }}</small>
+          </article>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section class="patent-band section-pad">
+        <div>
+          <p class="eyebrow">Innovation</p>
+          <h2>Co-inventor of US20250227110A1</h2>
+          <p>
+            Dynamic risk-score enforcement system for zero-trust cloud security, applied to real-time
+            threat detection and anomaly identification in production environments.
+          </p>
+        </div>
+        <a class="button secondary light" href="https://patents.google.com/patent/US20250227110A1" target="_blank" rel="noreferrer">View patent</a>
+      </section>
+
+      <section id="experience" class="section section-pad">
+        <div class="section-heading">
+          <p class="eyebrow">Experience</p>
+          <h2>From high-scale backend systems to specialized language models</h2>
+        </div>
+        <div class="timeline">
+          {% for job in experience %}
+          <article class="timeline-item">
+            <div class="timeline-meta">
+              <strong>{{ job.company }}</strong>
+              <span>{{ job.period }}</span>
+            </div>
+            <div class="timeline-body">
+              <h3>{{ job.role }}</h3>
+              <ul>
+                {% for highlight in job.highlights %}
+                <li>{{ highlight }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section id="skills" class="section section-pad skills-section">
+        <div class="section-heading">
+          <p class="eyebrow">Skills</p>
+          <h2>Tools I use to ship reliable AI products</h2>
+        </div>
+        <div class="skills-grid">
+          {% for group, items in skills.items() %}
+          <article class="skill-group">
+            <h3>{{ group }}</h3>
+            <div class="chips">
+              {% for skill in items %}
+              <span>{{ skill }}</span>
+              {% endfor %}
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section section-pad">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Let us talk about AI systems that need to work in the real world.</h2>
+          <p>{{ profile.location }} · {{ profile.phone }}</p>
+        </div>
+        <div class="contact-actions">
+          <a class="button primary" href="mailto:{{ profile.email }}">{{ profile.email }}</a>
+          <a class="button secondary" href="{{ url_for('static', filename='resume.html') }}" target="_blank" rel="noreferrer">Resume</a>
+          <a class="button secondary" href="{{ profile.linkedin }}" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="button secondary" href="{{ profile.github }}" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>{{ profile.name }}</span>
+      <span>{{ profile.title }}</span>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
