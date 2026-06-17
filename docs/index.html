@@ -7,101 +7,188 @@
     <title>Hanumant Shinde | Senior AI/ML Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="static/styles.css">
   </head>
   <body>
     <canvas id="signal-canvas" aria-hidden="true"></canvas>
 
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="Hanumant Shinde home">HS</a>
+      <a class="brand-lockup" href="#top" aria-label="Hanumant Shinde home">
+        <span class="brand">HS</span>
+        <span>
+          <strong>Hanumant Shinde</strong>
+          <small>Senior AI/ML Engineer</small>
+        </span>
+      </a>
       <nav class="nav" aria-label="Primary navigation">
         <a href="#work">Work</a>
+        <a href="#principles">Principles</a>
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="mailto:the.real.hshinde@gmail.com">Contact</a>
       </nav>
     </header>
 
     <main id="top">
       <section class="hero section-pad">
         <div class="hero-copy">
-          <p class="eyebrow">Senior AI/ML Engineer · SLMs · MLOps · Security Platforms</p>
+          <p class="eyebrow">Senior AI/ML Engineer · SLMs · Agentic AI · Security Platforms</p>
           <h1>Hanumant Shinde</h1>
-          <p class="hero-title">Senior AI/ML Engineer</p>
-          <p class="hero-summary">
-            I build production AI systems where model quality, data pipelines, deployment reliability,
-            and business impact all have to hold together. Recently: a 97% accurate SLM for structured
-            bug triage, multi-domain training pipelines on Azure ML, and agentic AI for network policy automation.
-          </p>
+          <p class="hero-title">I turn ambiguous AI ideas into reliable systems that ship.</p>
+          <p class="hero-summary">Senior AI/ML engineer building small language models, agentic workflows, MLOps pipelines, and high-scale backend systems for security and platform teams.</p>
           <div class="hero-actions">
             <a class="button primary" href="mailto:the.real.hshinde@gmail.com">Hire me</a>
             <a class="button secondary" href="static/resume.html" target="_blank" rel="noreferrer">Resume</a>
             <a class="button secondary" href="https://linkedin.com/in/meethshinde" target="_blank" rel="noreferrer">LinkedIn</a>
             <a class="button secondary" href="https://github.com/hanumant1255" target="_blank" rel="noreferrer">GitHub</a>
           </div>
+          <blockquote class="hero-quote">Curiosity finds the edge case. Ownership gets it into production.</blockquote>
         </div>
-        <aside class="hero-panel" aria-label="Professional snapshot">
-          <div>
-            <span>Current focus</span>
-            <strong>Small Language Models for Windows AI Platform</strong>
+
+        <aside class="hero-visual" aria-label="AI production system graphic">
+          <div class="visual-header">
+            <span>Production AI loop</span>
+            <strong>SLM to endpoint</strong>
           </div>
-          <div>
-            <span>Open to</span>
-            <strong>AI/ML engineering, staff backend, applied AI platform roles</strong>
+          <div class="system-map">
+            <div class="map-node n1">Data</div>
+            <div class="map-node n2">Labels</div>
+            <div class="map-node n3">Fine-tune</div>
+            <div class="map-node n4">Evaluate</div>
+            <div class="map-node n5">Deploy</div>
+            <div class="map-node n6">Observe</div>
+            <div class="map-line l1"></div>
+            <div class="map-line l2"></div>
+            <div class="map-line l3"></div>
+            <div class="map-line l4"></div>
+            <div class="map-line l5"></div>
           </div>
-          <div>
-            <span>Location</span>
-            <strong>Pune, India · Open to relocation</strong>
+          <div class="terminal-card">
+            <span>latest signal</span>
+            <code>accuracy=97% · f1=0.96 · latency target met</code>
+          </div>
+          <div class="hero-note">
+            <span>Available for</span>
+            <strong>Open to AI/ML engineering, applied AI platform, and staff backend roles.</strong>
           </div>
         </aside>
       </section>
 
-      <section class="metrics" aria-label="Career impact metrics">
+      <section class="metrics section-pad" aria-label="Career impact metrics">
         
         <div class="metric">
           <strong>97%</strong>
           <span>SLM bug-triage accuracy</span>
+          <small>Phi-3 Mini fine-tuned for structured bug fields</small>
         </div>
         
         <div class="metric">
           <strong>2B+</strong>
           <span>daily security transactions</span>
+          <small>Risk pipelines designed for sub-100ms latency</small>
         </div>
         
         <div class="metric">
           <strong>70%</strong>
           <span>manual triage reduction</span>
+          <small>300+ engineer-hours saved per month</small>
         </div>
         
       </section>
 
       <section id="work" class="section section-pad">
-        <div class="section-heading">
-          <p class="eyebrow">Selected work</p>
-          <h2>AI systems with production pressure behind them</h2>
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">Selected work</p>
+            <h2>Proof that the system shipped.</h2>
+          </div>
+          <p>
+            The strongest work leaves a trail: the problem that mattered,
+            the system that was built, and the measurable change after release.
+          </p>
         </div>
         <div class="work-grid">
           
           <article class="work-card">
+            <span class="card-tag">SLM lifecycle</span>
             <h3>Binary SLM for Windows Bug Triage</h3>
-            <p>Fine-tuned Phi-3 Mini 3.8B with QLoRA and PEFT to classify structured bug reports as auto-close or investigation-needed, outperforming GPT-4o on the target workflow.</p>
+            <dl>
+              <div>
+                <dt>Problem</dt>
+                <dd>Manual bug triage was slow, repetitive, and expensive at Windows platform scale.</dd>
+              </div>
+              <div>
+                <dt>Built</dt>
+                <dd>Fine-tuned Phi-3 Mini 3.8B with QLoRA and PEFT, then deployed the model through Azure ML and ONNX optimization.</dd>
+              </div>
+            </dl>
             <div class="impact">97% accuracy, 0.96 F1, 300+ engineer-hours saved monthly</div>
             <small>Python, PyTorch, HuggingFace TRL, QLoRA, PEFT, Azure ML, ONNX</small>
           </article>
           
           <article class="work-card">
+            <span class="card-tag">Data and MLOps</span>
             <h3>Multi-Domain SLM Data Pipeline</h3>
-            <p>Architected a configurable dataset generator with LLM auto-labelling, human verification, heuristics, and incremental retraining support for security, performance, UI, and compliance models.</p>
+            <dl>
+              <div>
+                <dt>Problem</dt>
+                <dd>Every new model domain needed trustworthy labels without rebuilding the training workflow.</dd>
+              </div>
+              <div>
+                <dt>Built</dt>
+                <dd>Created a configurable generator with LLM auto-labelling, human verification, heuristics, and incremental retraining.</dd>
+              </div>
+            </dl>
             <div class="impact">95% faster retraining cycles and reusable domain adaptation workflow</div>
             <small>Azure ML, dataset versioning, model registry, managed endpoints, evaluation pipelines</small>
           </article>
           
           <article class="work-card">
+            <span class="card-tag">Agentic AI</span>
             <h3>ZI-Agent for Network Policy Management</h3>
-            <p>Led a multi-stage agentic AI system using LLM reasoning, GraphRAG, and MCP to automate network policy configuration for enterprise security teams.</p>
+            <dl>
+              <div>
+                <dt>Problem</dt>
+                <dd>Network engineers needed faster, safer ways to configure complex enterprise policy rules.</dd>
+              </div>
+              <div>
+                <dt>Built</dt>
+                <dd>Led a multi-stage AI agent using LLM reasoning, GraphRAG, and MCP as a standalone service.</dd>
+              </div>
+            </dl>
             <div class="impact">60% less manual configuration time for 1,000+ network engineers</div>
             <small>Python, Java, GraphRAG, MCP, Kafka, Redis, Spring Boot, AWS</small>
+          </article>
+          
+        </div>
+      </section>
+
+      <section id="principles" class="principles section-pad">
+        <div class="section-heading">
+          <p class="eyebrow">How I work</p>
+          <h2>Curious enough to dig. Practical enough to ship.</h2>
+        </div>
+        <div class="principle-grid">
+          
+          <article class="principle-card">
+            <h3>Get the job done, then harden it</h3>
+            <p>Start with the job to be done, scope the smallest reliable system, then measure whether it helped.</p>
+          </article>
+          
+          <article class="principle-card">
+            <h3>Stay curious near the data</h3>
+            <p>The interesting bugs usually live between labels, telemetry, user behavior, and production constraints.</p>
+          </article>
+          
+          <article class="principle-card">
+            <h3>Make AI boring in production</h3>
+            <p>Good models are only valuable when evaluation, monitoring, rollback, and ownership are just as solid.</p>
+          </article>
+          
+          <article class="principle-card">
+            <h3>Explain the tradeoff</h3>
+            <p>I like decisions that a teammate can understand six months later: why this model, why this data, why now.</p>
           </article>
           
         </div>
@@ -120,9 +207,15 @@
       </section>
 
       <section id="experience" class="section section-pad">
-        <div class="section-heading">
-          <p class="eyebrow">Experience</p>
-          <h2>From high-scale backend systems to specialized language models</h2>
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">Experience</p>
+            <h2>From high-scale backend systems to specialized language models.</h2>
+          </div>
+          <p>
+            The through-line is ownership: platform reliability, data quality, model behavior,
+            deployment, and the people who have to use the system.
+          </p>
         </div>
         <div class="timeline">
           
@@ -223,9 +316,15 @@
       </section>
 
       <section id="skills" class="section section-pad skills-section">
-        <div class="section-heading">
-          <p class="eyebrow">Skills</p>
-          <h2>Tools I use to ship reliable AI products</h2>
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">Skills</p>
+            <h2>Tools for the full AI product lifecycle.</h2>
+          </div>
+          <p>
+            Model training is only one layer. Useful AI also needs data quality,
+            cloud deployment, observability, and backend systems that teams can trust.
+          </p>
         </div>
         <div class="skills-grid">
           
@@ -337,7 +436,7 @@
       <section id="contact" class="contact-section section-pad">
         <div>
           <p class="eyebrow">Contact</p>
-          <h2>Let us talk about AI systems that need to work in the real world.</h2>
+          <h2>Let us build AI systems that survive contact with production.</h2>
           <p>Pune, India · +91-9763015647</p>
         </div>
         <div class="contact-actions">
